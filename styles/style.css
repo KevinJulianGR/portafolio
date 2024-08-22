@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{/*Variables*/
+    --color-primario:#000000;
+    --color-secundario:#F6F6F6;
+    --color-terciario:#22D4FD;
+    --color-hover: #272727;
+
+    --fuente-monserrat: 'Monserrat', sans serif;
+    --fuente-krona: 'Krona One', sans serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    box-sizing: border-box; /*El elemento no se sale de su contenedor mayor, 
+    el hijo no sobrepasa al contenedor padre*/
+}
+
+.header{
+    padding: 2% 0 0 15%;/*El primer valor es de la parte de arriba, derecha, abajo e izquierda*/
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;/*1rem=16px*/
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;/*Sin decoracion en el texto*/
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    padding: 6% 15%;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;/*Separacion entre contenido*/ 
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;/*Tamaño fuente*/
+    font-family: var(--fuente-krona);/*Fuente*/
+}
+
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-monserrat);
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;/*Colocamos los botones o demas en columna*/
+    align-items: center;/*Centrar*/
+    gap: 32px;/*Espacio entre botones*/
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    text-align: center;/*Centrar texto*/
+    padding: 21.5px 0;/*Espacio, el primer valor es vertical, el segundo horizontal*/
+    border-radius: 8px;/*Redondeo del borde*/
+    font-family: var(--fuente-monserrat);
+    font-size:1.5rem;
+    font-weight: 600;/*Negrita*/
+    text-decoration: none;/*Quita la linea de los enlaces*/
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;/*Centra las imagenes en el eje horizontal*/
+    gap:10px;/*Espacio entre la imagen y el texto*/
+}
+
+.presentacion__enlaces__link:hover{/*Color a los botones cuando ponemos el cursor encima*/
+    border: 2px solid #0000FF;/*Cambia el color del borde*/
+    cursor: pointer;/*Cambiar el estilo del cursor a una mano con el dedo índice levantado.*/
+    background-color: var(--color-hover);/*Color que se refleja al pasar el cursor*/
+    padding: 2%;/*Tamaño que aumenta al pasar el cursor*/
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 1.5rem;/*Distancia entre contenido y sus bordes*/
+    color: var(--color-primario);
+    text-align: center;/*Centrar texto*/
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__contenido__texto a{
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+@media (max-width: 1200px){/*Se ajusta cuando la pantalla es de 1200px o menos*/
+    .header{
+        padding: 10% 10% 10% 10%;
+    }
+    .header__menu{
+        justify-content: center;
+    }
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion__contenido{ 
+        width: auto;/*Ancho automatico*/
+    }
+}
